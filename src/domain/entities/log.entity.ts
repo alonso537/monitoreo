@@ -38,3 +38,4 @@ export class LogEntity {
     return log;
   };
 }
+
