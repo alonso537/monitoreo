@@ -1,5 +1,5 @@
-import { Server } from "./presentation/server"
 
+import { Server } from "./presentation/server"
 
 
 (async () => {
