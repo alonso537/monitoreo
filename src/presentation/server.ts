@@ -11,13 +11,15 @@ export class Server {
   public static start() {
     console.log("Server Started...");
 
-    CronService.createJob("*/5 * * * * *", () => {
-      const url = "https://soloher.com";
-      new CheckService(
-        fileSystemLogRepository,
-        () => console.log("success"),
-        (error) => console.log(error)
-      ).execute(url);
-    });
+    //mandar email
+
+    // CronService.createJob("*/5 * * * * *", () => {
+    //   const url = "https://soloher.com";
+    //   new CheckService(
+    //     fileSystemLogRepository,
+    //     () => console.log("success"),
+    //     (error) => console.log(error)
+    //   ).execute(url);
+    // });
   }
 }
