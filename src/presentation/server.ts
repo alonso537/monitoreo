@@ -1,10 +1,14 @@
+import { CheckService } from "../domain/use-cases";
 import { SendEmailLogs } from "../domain/use-cases/email/send-email-logs";
 import { FileSystemDatasource } from "../infrastructure/datasources/file-system.datasource";
+import { MongoLogDatasource } from "../infrastructure/datasources/mongo-log.datasource";
 import { LogRepositoryImpl } from "../infrastructure/repositories/log-impl.repository";
+import { CronService } from "./cron/cron-service";
 import { EmailService } from "./email/email.service";
 
-const fileSystemLogRepository = new LogRepositoryImpl(
-  new FileSystemDatasource()
+const logRepository = new LogRepositoryImpl(
+  // new FileSystemDatasource()
+  new MongoLogDatasource()
 );
 
 const emailService = new EmailService()
@@ -24,13 +28,13 @@ export class Server {
 
     //mandar email
 
-    // // CronService.createJob("*/5 * * * * *", () => {
-    // //   const url = "https://soloher.com";
-    // //   new CheckService(
-    // //     fileSystemLogRepository,
-    // //     () => console.log("success"),
-    // //     (error) => console.log(error)
-    // //   ).execute(url);
-    // // });
+    // CronService.createJob("*/5 * * * * *", () => {
+    //   const url = "https://soloher.com";
+    //   new CheckService(
+    //     logRepository,
+    //     () => console.log("success"),
+    //     (error) => console.log(error)
+    //   ).execute(url);
+    // });
   }
 }
