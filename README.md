@@ -11,4 +11,5 @@ el objetivo es crear una serie de tareas usando arquitectura limpia con typescri
 
 
 3. Ejecutar el comando ```npm i ```
-4. Ejecutar ```npm run dev```
+4. levantar las bases de datos 
+5. Ejecutar ```npm run dev```
